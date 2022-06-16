@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-mongoose.connect(process.env.MONGO_URI || '');
+mongoose.connect(process.env.MONGO_URI as string);
 
 const PORT = 3001;
 

@@ -32,7 +32,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const routes_1 = __importDefault(require("./notes/routes"));
 dotenv.config();
 const app = (0, express_1.default)();
-mongoose_1.default.connect(process.env.MONGO_URI || '');
+mongoose_1.default.connect(process.env.MONGO_URI);
 const PORT = 3001;
 app.use(express_1.default.json());
 app.use('/api/', routes_1.default);
