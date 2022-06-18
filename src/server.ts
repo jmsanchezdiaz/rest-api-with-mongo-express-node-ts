@@ -10,7 +10,7 @@ const app = express();
 
 mongoose.connect(process.env.MONGO_URI as string);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 1337;
 
 app.use(express.json());
 app.use('/api/', notesRouter);
