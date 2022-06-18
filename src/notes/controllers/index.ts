@@ -32,7 +32,7 @@ export const createNote = async (req: INoteRequestBody, res: Response) => {
       .status(400)
       .json({ status: 400, message: 'Invalid note passed as parameter' });
 
-  Note.create({ id: Date.now(), ...note });
+  await Note.create({ id: Date.now(), ...note });
 
   res.status(200).json({
     status: 200,
