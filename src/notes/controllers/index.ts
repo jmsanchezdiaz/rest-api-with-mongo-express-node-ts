@@ -9,13 +9,13 @@ import { INoteRequestBody } from '../../types';
  * @param {Response} res - Response - This is the response object that will be sent back to the client.
  */
 export const getNotes = async (_req: INoteRequestBody, res: Response) => {
-  await Note.find((error, data) => {
+  await Note.find({}, (error, data) => {
     if (error) {
       res.status(404).json({ status: 404, message: 'No notes found' });
     }
 
     res.status(200).json(data);
-  });
+  }).clone();
 };
 
 /**
