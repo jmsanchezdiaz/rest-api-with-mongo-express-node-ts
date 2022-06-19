@@ -12,5 +12,6 @@ const PORT = process.env.PORT || 1337;
 app.use(express.json());
 app.use('/api/', notesRouter);
 
-mongoose.connect(process.env.MONGO_URI as string);
-app.listen(PORT, () => console.log('Server on port ', PORT));
+mongoose.connect(process.env.MONGO_URI as string).then(() => {
+  app.listen(PORT, () => console.log('Server on port ', PORT));
+});

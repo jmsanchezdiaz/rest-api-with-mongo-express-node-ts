@@ -27,7 +27,7 @@ export const getNotes = async (_req: INoteRequestBody, res: Response) => {
 export const createNote = async (req: INoteRequestBody, res: Response) => {
   const note = req.body;
 
-  if (!note.author || !note.body)
+  if (!note.body)
     res
       .status(400)
       .json({ status: 400, message: 'Invalid note passed as parameter' });
