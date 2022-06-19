@@ -23,8 +23,9 @@
     "typescript": "4.7.3"
   },
   "dependencies": {
-    "mongoose": "6.3.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "4.18.1",
-    "dotenv": "^16.0.1"
+    "mongoose": "6.3.8"
   }
 }
